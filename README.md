@@ -40,3 +40,8 @@ Current version unlocks most of the basic capabilities of both projects and impr
 Have a look at [apidoc](https://github.com/apidoc/apidoc) for full functionality overview and capabilities of apidoc.
 
 To read more about how swagger works refer to [swagger-ui](https://github.com/swagger-api/swagger-ui) and [swagger-spec](https://github.com/swagger-api/swagger-spec) for details of `swagger.json`.
+
+
+## Gulp Module
+
+[gulp-apidoc-swagger](https://github.com/fsbahman/gulp-apidoc-swagger) `npm install gulp-apidoc-swagger`.
