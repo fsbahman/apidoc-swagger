@@ -1,2 +1,7 @@
 node_modules/
 .idea/
+test/
+json/
+obj/
+apidoc-swagger.njsproj
+apidoc-swagger.sln
