@@ -3,3 +3,8 @@ node_modules/
 test/
 .gitignore
 .npmignore
+json/
+lib/read
+obj/
+apidoc-swagger.njsproj
+apidoc-swagger.sln
