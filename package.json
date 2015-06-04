@@ -35,6 +35,7 @@
     "lodash": "^3.5.0",
     "marked": "^0.3.3",
     "nomnom": "^1.8.1",
+    "path-to-regexp": "^1.2.0",
     "winston": "^0.9.0"
   },
   "devDependencies": {},
