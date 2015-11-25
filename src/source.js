@@ -57,6 +57,12 @@
  * @apiSuccess (202) {String} logIn.m2xId  User identifier
  * @apiSuccess (202) {String} logIn.m2xKey User secret key/password
  * @apiSuccess (203) {String[]} logInAlt User secret key/password
+ * @apiSuccess (204) {Object[]} ssFiles List of site supervisors with files
+ * @apiSuccess (204) {String} ssFiles.id Site Supervisor Id
+ * @apiSuccess (204) {String} ssFiles.name Site Supervisor Name
+ * @apiSuccess (204) {Object[]} ssFiles.files Site Supervisor file list
+ * @apiSuccess (204) {String} ssFiles.files.id record Id
+ * @apiSuccess (204) {String} ssFiles.files.name File name
  *
  * @apiSuccessExample {json} Success Response:
  *    HTTP/1.1 200 Ok
@@ -87,3 +93,25 @@
  * @apiSuccess (202) {null} null
  */
 
+/**
+ * @api {patch} /api/supervisors/:ssId Site Supervisor Update
+ * @apiName supervisor patch
+ * @apiGroup Supervisor
+ * @apiHeader (header) {String} X-M2X-ID  User identifier
+ * @apiHeader (header) {String} X-M2X-KEY User secret key/password
+ * @apiParam (path) {String} ssId  Site Supervisor Id
+ * @apiParam (body) {Object} SSA Supervisor Agent params
+ * @apiParam (body) {String} SSA.ss_username Agent login
+ * @apiParam (body) {String} SSA.ss_password Agent password
+ * @apiParam (body) {Integer} SSA.heartbeat_interval Agent ???
+ * @apiParam (body) {Integer} SSA.reporting_interval Agent global values reporting interval in minutes
+ * @apiParam (body) {Integer} SSA.conf_update_interval Agent configuration reporting interval
+ *
+ * @apiExample {curl} usage Example:
+ *    curl -i -H "X-M2X-ID:XXX" -H "X-M2X-KEY:ZZZ" http://localhost/api/supervisors/9201d84f67555c1d80448ca27977ba91 -X PATCH -H "Content-Type: application/json" --data-raw '{"SSA":{"heartbeat_interval":20,"reporting_interval":49,"conf_update_interval":183,"ss_username":"emerson_ss_2","ss_password":"2014-00253"}}'
+ *
+ * @apiUse authFail
+ * @apiUse notFound
+ *
+ * @apiSuccess (202) {null} null
+ */
