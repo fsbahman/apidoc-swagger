@@ -12,11 +12,12 @@ By putting in line comments in the source code like this in javascript, you will
 `/api/foo.js`:
 ```js
 /**
- * @api {get} /user/id Request User information
+ * @api {patch} /user/id Patch User information
  * @apiName GetUser
  * @apiGroup User
  *
- * @apiParam {Number} id Users unique ID.
+ * @apiParam (path) {Number} id       Users unique ID.
+ * @apiParam (body) {String} username Users username.
  *
  * @apiSuccess {String} firstname Firstname of the User.
  * @apiSuccess {String} lastname  Lastname of the User.
