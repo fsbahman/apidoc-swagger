@@ -45,6 +45,8 @@ var argv = nomnom
 
     .option('simulate', { flag: true, 'default': false, help: 'Execute but not write any file.' })
 
+    .option('use-apidoc-output', { flag: true, 'default': false, help: 'Use api_data.json and api_project.json from apidoc as input' })
+
     // markdown settings
     .option('markdown', { flag: true, 'default': true, help: 'Turn off markdown parser.' })
 
@@ -122,22 +124,23 @@ function resolveMarkdownOptions(argv) {
 }
 
 var options = {
-    excludeFilters: argv['exclude-filters'],
-    includeFilters: argv['file-filters'],
-    src           : argv['input'],
-    dest          : argv['output'],
-    verbose       : argv['verbose'],
-    debug         : argv['debug'],
-    parse         : argv['parse'],
-    colorize      : argv['color'],
-    filters       : transformToObject(argv['parse-filters']),
-    languages     : transformToObject(argv['parse-languages']),
-    parsers       : transformToObject(argv['parse-parsers']),
-    workers       : transformToObject(argv['parse-workers']),
-    silent        : argv['silent'],
-    simulate      : argv['simulate'],
-    markdown      : argv['markdown'],
-    marked        : resolveMarkdownOptions(argv)
+    excludeFilters  : argv['exclude-filters'],
+    includeFilters  : argv['file-filters'],
+    src             : argv['input'],
+    dest            : argv['output'],
+    verbose         : argv['verbose'],
+    debug           : argv['debug'],
+    parse           : argv['parse'],
+    colorize        : argv['color'],
+    filters         : transformToObject(argv['parse-filters']),
+    languages       : transformToObject(argv['parse-languages']),
+    parsers         : transformToObject(argv['parse-parsers']),
+    workers         : transformToObject(argv['parse-workers']),
+    silent          : argv['silent'],
+    simulate        : argv['simulate'],
+    useApidocOutput : argv['use-apidoc-output'],
+    markdown        : argv['markdown'],
+    marked          : resolveMarkdownOptions(argv)
 };
 
 if (apidocSwagger.createApidocSwagger(options) === false) {
