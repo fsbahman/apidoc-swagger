@@ -8,7 +8,7 @@
     "url": "https://github.com/fsbahman/apidoc-swagger/blob/master/README.md/LICENSE"
   },
   "preferGlobal": true,
-  "bin": "bin/apidocSwagger.js",
+  "bin": "bin/apidoc-swagger",
   "main": "./lib/index.js",
   "repository": {
     "type": "git",
@@ -30,7 +30,7 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "apidoc-core": "0.3.1",
+    "apidoc-core": "0.3.2",
     "fs-extra": "^0.16.5",
     "lodash": "^3.5.0",
     "marked": "^0.3.3",
