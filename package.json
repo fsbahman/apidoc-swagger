@@ -30,10 +30,10 @@
     "node": ">= 0.10.0"
   },
   "dependencies": {
-    "apidoc-core": "0.3.1",
+    "apidoc-core": "0.8.3",
     "fs-extra": "^0.16.5",
     "lodash": "^3.5.0",
-    "marked": "^0.3.3",
+    "markdown-it": "^8.3.2",
     "nomnom": "^1.8.1",
     "path-to-regexp": "^1.2.0",
     "winston": "^0.9.0"
