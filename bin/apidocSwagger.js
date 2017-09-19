@@ -72,6 +72,8 @@ var argv = nomnom
     .option('marked-smartypants', { flag: true, 'default': false,
             help: 'Use \'smart\' typograhic punctuation for things like quotes and dashes.' })
 
+    .option('swagger-init', { help: 'Optional user defined initial swagger structure. Format name=filename' })
+
     .parse()
 ;
 
@@ -137,7 +139,8 @@ var options = {
     silent        : argv['silent'],
     simulate      : argv['simulate'],
     markdown      : argv['markdown'],
-    marked        : resolveMarkdownOptions(argv)
+    marked        : resolveMarkdownOptions(argv),
+    swaggerInit   : require(path.resolve(argv['swagger-init']))
 };
 
 if (apidocSwagger.createApidocSwagger(options) === false) {
