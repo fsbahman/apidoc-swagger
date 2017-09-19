@@ -32,6 +32,7 @@
   "dependencies": {
     "apidoc-core": "0.8.3",
     "fs-extra": "^0.16.5",
+    "html2markdown": "^1.1.0",
     "lodash": "^3.5.0",
     "markdown-it": "^8.3.2",
     "nomnom": "^1.8.1",
