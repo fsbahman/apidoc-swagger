@@ -140,7 +140,7 @@ var options = {
     simulate      : argv['simulate'],
     markdown      : argv['markdown'],
     marked        : resolveMarkdownOptions(argv),
-    swaggerInit   : require(path.resolve(argv['swagger-init']))
+    swaggerInit   : argv['swagger-init'] ? require(path.resolve(argv['swagger-init'])) : null
 };
 
 if (apidocSwagger.createApidocSwagger(options) === false) {
