@@ -72,7 +72,7 @@ var argv = nomnom
     .option('marked-smartypants', { flag: true, 'default': false,
             help: 'Use \'smart\' typograhic punctuation for things like quotes and dashes.' })
 
-    .option('swagger-init', { help: 'Optional user defined initial swagger structure. Format name=filename' })
+    .option('swagger-init', { 'default': '', help: 'Optional user defined initial swagger structure. Format name=filename' })
 
     .parse()
 ;
