@@ -2,3 +2,5 @@ node_modules/
 .idea/
 json/
 obj/
+.vscode/
+package-lock.json
