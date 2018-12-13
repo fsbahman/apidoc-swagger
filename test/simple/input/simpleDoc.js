@@ -29,7 +29,7 @@
  * @apiName AddItemToUserFavorites
  * @apiGroup User
  *
- * @apiParam {Number} id Favorite item id
+ * @apiParam {Number} item_id Favorite item id
  *
  * @apiSuccess {Number} id Favorite item id
  * @apiSuccess {String} name Favorite item name
