@@ -15,9 +15,11 @@ By putting in line comments in the source code like this in javascript, you will
 `/api/foo.js`:
 ```js
 /**
- * @api {get} /user/id Request User information
+ * @api {get} /user/:id Request User information
  * @apiName GetUser
  * @apiGroup User
+ *
+ * @apiHeader {String} [x-request-id] Request id for tracking
  *
  * @apiParam {Number} id Users unique ID.
  *
