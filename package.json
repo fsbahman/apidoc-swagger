@@ -32,7 +32,7 @@
   "dependencies": {
     "apidoc-core": "0.3.1",
     "fs-extra": "^0.16.5",
-    "lodash": "^3.5.0",
+    "lodash": "^4.17.13",
     "marked": "^0.3.3",
     "nomnom": "^1.8.1",
     "path-to-regexp": "^1.2.0",
