@@ -38,7 +38,40 @@ Current version unlocks most of the basic capabilities of both projects and impr
 
 `apidoc-swagger -i example/ -o doc/`
 
+## Options
 
+The following options can be used to customize the behavior of apidoc-swagger:
+
+| Long Name | Abbreviation | Default | Description |
+| --------- | ------------ | ------- | ----------- |
+| **--input** | **-i** | **REQUIRED** | Input / source dirname. |
+| --file-filters | -f | `.*\\.(clj|coffee|cs|dart|erl|go|java|scala|js|php?|py|rb|ts|pm)$` | RegEx-Filter to select files that should be parsed. |
+| --exclude-filters | -e | | RegEx-Filter to select files / dirs that should not be parsed. |
+| --output | -o | ./doc/ | Output dirname. |
+| --verbose | -v | false | Vebose debug output. |
+| --help | -h | | Shows help information |
+| --debug | | false | Show debug message |
+| --color | | true | Turn off log color |
+| --host | | | target host to use instead of url in package.json/apidoc.json |
+| --default-response | | false | uses default success responses instead of api doc generated responses |
+| --base-path | | / | basepath for the api |
+| --schemes | | http | comma separated list of url schemes |
+| --parse | | false | Parse only the files and return the data, no file creation. |
+| --parse-filters | | | Optional user defined filters. Format name=filename. |
+| --parse-languages | | | Optional user defined languages. Format name=filename. |
+| --parse-parsers | | | Optional user defined parsers. Format name=filename |
+| --parse-workers | | | Optional user defined workers. Format name=filename |
+| --silent | | false | Turn all output off |
+| --simulate | | false | Execute but don't create output file |
+| --markdown | | false | Turn on markdown parser |
+| --marked-config | | | Enable custom markdown parser configs. It will overwite all other marked settings. |
+| --marked-gfm | | false | Enable GitHub flavored markdown. |
+| --marked-tables | | false | Enable GFM tables. This option requires the gfm option to be true. |
+| --marked-breaks | | false | Enable GFM line breaks. This option requires the gfm option to be true. |
+| --marked-pedantic | | false | Conform to obscure parts of markdown.pl as much as possible. |
+| --marked-sanitize | | false | Sanitize the output. Ignore any HTML that has been input. | 
+| --marked-smartLists | | false | Use smarter list behavior than the original markdown. |
+| --marked-smartypants | | false | Use 'smart' typograhic punctuation for things like quotes and dashes. |
 
 Have a look at [apidoc](https://github.com/apidoc/apidoc) for full functionality overview and capabilities of apidoc.
 
