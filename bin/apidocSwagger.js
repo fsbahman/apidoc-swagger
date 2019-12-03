@@ -33,6 +33,15 @@ var argv = nomnom
 
     .option('color', { flag: true, 'default': true, help: 'Turn off log color.' })
 
+    .option('host', { help: 'target host to use instead of url in package.json/apidoc.json'})
+
+    .option('default-response', { flag: true, default: false,
+        help: 'uses default success responses instead of api doc generated responses'})
+
+    .option('base-path', {default: '/', help: 'basepath for the api'})
+
+    .option('schemes', {help: 'comma separated list of url schemes. defaults to http'})
+
     .option('parse', { flag: true, 'default': false,
             help: 'Parse only the files and return the data, no file creation.' })
 
@@ -46,15 +55,15 @@ var argv = nomnom
     .option('simulate', { flag: true, 'default': false, help: 'Execute but not write any file.' })
 
     // markdown settings
-    .option('markdown', { flag: true, 'default': true, help: 'Turn off markdown parser.' })
+    .option('markdown', { flag: true, 'default': false, help: 'Turn on markdown parser.' })
 
     .option('marked-config',      { 'default': '',
             help: 'Enable custom markdown parser configs. It will overwite all other marked settings.' })
 
-    .option('marked-gfm',         { flag: true, 'default': true,
+    .option('marked-gfm',         { flag: true, 'default': false,
             help: 'Enable GitHub flavored markdown.' })
 
-    .option('marked-tables',      { flag: true, 'default': true,
+    .option('marked-tables',      { flag: true, 'default': false,
             help: 'Enable GFM tables. This option requires the gfm option to be true.' })
 
     .option('marked-breaks',      { flag: true, 'default': false,
@@ -99,6 +108,10 @@ function transformToObject(filters) {
     return result;
 }
 
+function generateSchemes(schemes) {
+    return (schemes) ? schemes.split(',') : ['http']
+}
+
 /**
  * Sets configuration for markdown
  *
@@ -122,22 +135,26 @@ function resolveMarkdownOptions(argv) {
 }
 
 var options = {
-    excludeFilters: argv['exclude-filters'],
-    includeFilters: argv['file-filters'],
-    src           : argv['input'],
-    dest          : argv['output'],
-    verbose       : argv['verbose'],
-    debug         : argv['debug'],
-    parse         : argv['parse'],
-    colorize      : argv['color'],
-    filters       : transformToObject(argv['parse-filters']),
-    languages     : transformToObject(argv['parse-languages']),
-    parsers       : transformToObject(argv['parse-parsers']),
-    workers       : transformToObject(argv['parse-workers']),
-    silent        : argv['silent'],
-    simulate      : argv['simulate'],
-    markdown      : argv['markdown'],
-    marked        : resolveMarkdownOptions(argv)
+    excludeFilters  : argv['exclude-filters'],
+    includeFilters  : argv['file-filters'],
+    src             : argv['input'],
+    dest            : argv['output'],
+    verbose         : argv['verbose'],
+    debug           : argv['debug'],
+    host            : argv['host'],
+    defaultResponse : argv['default-response'],
+    basePath        : argv['base-path'],
+    schemes         : generateSchemes(argv['schemes']),
+    parse           : argv['parse'],
+    colorize        : argv['color'],
+    filters         : transformToObject(argv['parse-filters']),
+    languages       : transformToObject(argv['parse-languages']),
+    parsers         : transformToObject(argv['parse-parsers']),
+    workers         : transformToObject(argv['parse-workers']),
+    silent          : argv['silent'],
+    simulate        : argv['simulate'],
+    markdown        : argv['markdown'],
+    marked          : resolveMarkdownOptions(argv)
 };
 
 if (apidocSwagger.createApidocSwagger(options) === false) {
