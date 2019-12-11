@@ -12,16 +12,6 @@ module.export = {
         simulate: false,
         parse: false, // only parse and return the data, no file creation
         colorize: true,
-        markdown: true,
-
-        marked: {
-            gfm: true,
-            tables: true,
-            breaks: false,
-            pedantic: false,
-            sanitize: false,
-            smartLists: false,
-            smartypants: false
-        }
+        markdown: true
     }
 };
