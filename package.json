@@ -33,7 +33,7 @@
     "apidoc-core": "0.11.0",
     "fs-extra": "^8.1.0",
     "lodash": "^4.17.15",
-    "markdown-it": "^10.0.0",
+    "markdown-it": "^12.3.2",
     "nomnom": "^1.8.1",
     "path-to-regexp": "^1.2.0",
     "winston": "^0.9.0"
